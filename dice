@@ -1,12 +1,25 @@
 import random
-def dice():
-    return random.randint(1,6)
+result = []
+def dice(x):
+    global result
+    result = []
+    for _ in range(x):
+        roll = random.randint(1,6)
+        result.append(roll)
+    return result
 while True:
     roll = input("Roll dice? (y/n)")
+    while True:
+        try:
+            ammount = int(input("How many dice?"))
+            break
+        except ValueError:
+            print("Enter a number!")
     if roll not in ["y","n"]:
         print("Enter y or n!")
     if roll == "y":
-        print(f"You rolled a {dice()}")
+        print(f"You rolled a {dice(ammount)}")
+        print(f"Total ammount = {sum(result)}")
     if roll == "n":
         print("goodbye!")
         break
