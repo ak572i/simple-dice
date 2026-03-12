@@ -1,0 +1,12 @@
+import random
+def dice():
+    return random.randint(1,6)
+while True:
+    roll = input("Roll dice? (y/n)")
+    if roll not in ["y","n"]:
+        print("Enter y or n!")
+    if roll == "y":
+        print(f"You rolled a {dice()}")
+    if roll == "n":
+        print("goodbye!")
+        break
