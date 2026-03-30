@@ -37,7 +37,7 @@ while True:
         flips = int(input("How many coin flips?"))
         flip(flips)
         print(f"You got {result}")
-    elif choice == "q":
+    elif choice in ["q","Q"]:
         print("Goodbye!")
         break
     elif choice not in ["1","2","q"]:
